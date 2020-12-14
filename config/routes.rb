@@ -5,5 +5,5 @@ Rails.application.routes.draw do
  get '/' => 'homes#apptop'
  post 'lists' => 'lists#create'
  get 'lists' => 'lists#index'
- get 'lists/:id' => 'lists#show'
+ get 'lists/:id' => 'lists#show', as: 'list'
 end

@@ -7,12 +7,16 @@ class ListsController < ApplicationController
   def create
     book = Book.new(book_params)
     book.save
-    redirect_to '/lists'
+    redirect_to list_path(book.id)
   end
 
   def index
     @books = Book.all
     @book = Book.new
+  end
+
+  def show
+    @book = Book.find(params[:id])
   end
 
 
